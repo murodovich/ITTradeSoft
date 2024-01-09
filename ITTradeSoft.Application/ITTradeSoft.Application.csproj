@@ -28,8 +28,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\OneDrive\Рабочий стол\tradesoft\ITTradeSoft\ITTradeSoft.Domain\ITTradeSoft.Domain.csproj" />
-    <ProjectReference Include="..\ITTradeSoft.Domain\ITTradeSoft.Domain.csproj" />
-
   </ItemGroup>
 
 	
