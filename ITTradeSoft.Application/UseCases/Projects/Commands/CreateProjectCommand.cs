@@ -8,5 +8,6 @@ namespace ITTradeSoft.Application.UseCases.Projects.Commands
         public string Name { get; set; }
         public string Description { get; set; }
         public IFormFile ImagePath { get; set; }
+
     }
 }
