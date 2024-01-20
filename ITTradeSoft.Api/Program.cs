@@ -1,9 +1,15 @@
+using ITTradeSoft.Application;
+using ITTradeSoft.Infrastructure;
+
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddAplication();
+builder.Services.AddInfrastructure(builder.Configuration);
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
 
 var app = builder.Build();
 
