@@ -1,10 +1,7 @@
 ﻿using ITTradeSoft.Application.Absreactions;
 using ITTradeSoft.Application.FileServices;
 using ITTradeSoft.Application.UseCases.Projects.Queries;
-using ITTradeSoft.Domain.Entities.Projects;
-using ITTradeSoft.Domain.Exceptions.ImageExceptions;
 using MediatR;
-using Microsoft.EntityFrameworkCore;
 
 namespace ITTradeSoft.Application.UseCases.Projects.Handler
 {
@@ -23,8 +20,8 @@ namespace ITTradeSoft.Application.UseCases.Projects.Handler
         {
             await _fileService.GetImageAsync(request.ImagePath);
             return string.Empty;
-            
-            
+
+
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using ITTradeSoft.Application.Absreactions;
 using ITTradeSoft.Application.UseCases.Questions.Command;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 
 namespace ITTradeSoft.Application.UseCases.Questions.Handler
 {
@@ -13,9 +14,19 @@ namespace ITTradeSoft.Application.UseCases.Questions.Handler
             _dbContext = dbContext;
         }
 
-        public Task<bool> Handle(UpdateQuestionsCommand request, CancellationToken cancellationToken)
+        public async Task<bool> Handle(UpdateQuestionsCommand request, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            var result = await _dbContext.Questions.FirstOrDefaultAsync(x => x.Id == request.Id);
+            //if (result == null) throw new QuestionsNotFoundExceptions();
+
+            result.Name = request.Name;
+            result.PhoneNumber = request.PhoneNumber;
+            result.Questionies = request.Questionies;
+            result.UpdatedAt = DateTime.UtcNow;
+
+            _dbContext.Questions.Update(result);
+            var res = await _dbContext.SaveChangesAsync(cancellationToken);
+            return res > 0;
         }
     }
 }
