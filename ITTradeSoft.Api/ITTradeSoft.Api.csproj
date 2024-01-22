@@ -21,8 +21,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\media\images\" />
-    <Folder Include="wwwroot\media\" />
+
+    <ProjectReference Include="..\..\..\..\..\source\repos\ITTradeSoft\ITTradeSoft.Application\ITTradeSoft.Application.csproj" />
+    <ProjectReference Include="..\ITTradeSoft.Application\ITTradeSoft.Application.csproj" />
+    <ProjectReference Include="..\ITTradeSoft.Infrastructure\ITTradeSoft.Infrastructure.csproj" />
+
   </ItemGroup>
 
 </Project>

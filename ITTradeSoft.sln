@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ITTradeSoft.Domain", "ITTra
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ITTradeSoft.Infrastructure", "ITTradeSoft.Infrastructure\ITTradeSoft.Infrastructure.csproj", "{090C4BE0-B74A-4AE8-8AB0-0728A3A1F197}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ITTradeSoft.Application", "..\..\..\..\source\repos\ITTradeSoft\ITTradeSoft.Application\ITTradeSoft.Application.csproj", "{AE78D375-9124-4E6B-AC1C-AC248E106BB1}"
+
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,6 @@ Global
 		{090C4BE0-B74A-4AE8-8AB0-0728A3A1F197}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{090C4BE0-B74A-4AE8-8AB0-0728A3A1F197}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{090C4BE0-B74A-4AE8-8AB0-0728A3A1F197}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AE78D375-9124-4E6B-AC1C-AC248E106BB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AE78D375-9124-4E6B-AC1C-AC248E106BB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AE78D375-9124-4E6B-AC1C-AC248E106BB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AE78D375-9124-4E6B-AC1C-AC248E106BB1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

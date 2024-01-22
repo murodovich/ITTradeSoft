@@ -1,5 +1,5 @@
 ﻿using ITTradeSoft.Application.Common.Helpers;
-
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 
 
@@ -7,17 +7,16 @@ namespace ITTradeSoft.Application.FileServices
 {
     public class FileService : IFileService
     {
-        private readonly IWebHostEnvironment _webHost;
+        
+        private readonly IWebHostEnvironment _webHostEnvironment;
         private readonly string MEDIA = "media";
         private readonly string IMAGES = "images";
         private readonly string ROOTPATH;
 
-        
-
-        public FileService(IWebHostEnvironment webHost  )
+        public FileService(IWebHostEnvironment enviroment, IWebHostEnvironment webHostEnvironment)
         {
-            ROOTPATH = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            _webHost = webHost;
+            this.ROOTPATH = enviroment.WebRootPath;
+            _webHostEnvironment = webHostEnvironment;
         }
 
         public async ValueTask<byte[]> GetImageAsync(string filepath)
@@ -42,18 +41,16 @@ namespace ITTradeSoft.Application.FileServices
 
         public async ValueTask<string> UploadImageAsync(IFormFile imagepath)
         {
-            string newImageName = MediaHelper.MakeImageName(imagepath.FileName.ToLower());
-            var subPath = "/Images/" + Guid.NewGuid() + newImageName;
-            //string subPath = Path.Combine(MEDIA, IMAGES, newImageName);
-            
-            
-            string path = ROOTPATH + subPath;
+            string newImageName = MediaHelper.MakeImageName(imagepath.FileName);
+            string subPath = Path.Combine(MEDIA, IMAGES, newImageName);
 
-            using (var stream = new FileStream(path, FileMode.Create))
-            {
-                await imagepath.CopyToAsync(stream);
-                return subPath;
-            }
+            string path = Path.Combine(ROOTPATH, subPath);
+
+            FileStream fileStream = new FileStream(path, FileMode.Create);
+            await imagepath.CopyToAsync(fileStream);
+            fileStream.Close();
+
+            return subPath;
         }
     }
 }
