@@ -1,6 +1,7 @@
 ﻿using ITTradeSoft.Application.Absreactions;
 using ITTradeSoft.Application.FileServices;
 using ITTradeSoft.Application.UseCases.Projects.Queries;
+using ITTradeSoft.Domain.Exceptions.ImageExceptions;
 using MediatR;
 
 namespace ITTradeSoft.Application.UseCases.Projects.Handler
@@ -18,8 +19,10 @@ namespace ITTradeSoft.Application.UseCases.Projects.Handler
 
         public async Task<string> Handle(GetImageProjectQuery request, CancellationToken cancellationToken)
         {
-            await _fileService.GetImageAsync(request.ImagePath);
-            return string.Empty;
+            var imagepath = await _fileService.GetImageAsync(request.ImagePath);
+            if (imagepath == null) throw new ImageNotValid();
+
+            return "";
 
 
         }
