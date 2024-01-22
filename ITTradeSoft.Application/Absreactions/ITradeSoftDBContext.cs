@@ -10,8 +10,7 @@ namespace ITTradeSoft.Application.Absreactions
         public DbSet<Project> Projects { get; set; }
         public DbSet<Questions> Questions { get; set; }
         public DbSet<ProjectCalculator> ProjectCalculations { get; set; }
-
-
+    
         public Task<int> SaveChangesAsync(CancellationToken cancellationToken);
     }
 }
