@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\source\repos\ITTradeSoft\ITTradeSoft.Application\ITTradeSoft.Application.csproj" />
     <ProjectReference Include="..\ITTradeSoft.Application\ITTradeSoft.Application.csproj" />
-    <ProjectReference Include="..\ITTradeSoft.Domain\ITTradeSoft.Domain.csproj" />
   </ItemGroup>
 
 </Project>
