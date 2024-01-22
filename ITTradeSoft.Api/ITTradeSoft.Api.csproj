@@ -16,13 +16,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\media\images\" />
+    <ProjectReference Include="..\..\..\..\..\source\repos\ITTradeSoft\ITTradeSoft.Application\ITTradeSoft.Application.csproj" />
+    <ProjectReference Include="..\ITTradeSoft.Infrastructure\ITTradeSoft.Infrastructure.csproj" />
   </ItemGroup>
 
   <ItemGroup>
+
     <ProjectReference Include="..\..\..\..\..\source\repos\ITTradeSoft\ITTradeSoft.Application\ITTradeSoft.Application.csproj" />
     <ProjectReference Include="..\ITTradeSoft.Application\ITTradeSoft.Application.csproj" />
     <ProjectReference Include="..\ITTradeSoft.Infrastructure\ITTradeSoft.Infrastructure.csproj" />
+
   </ItemGroup>
 
 </Project>
