@@ -14,8 +14,8 @@ namespace ITTradeSoft.Api.Controllers
         {
             _mediator = mediator;
         }
-
-        public async ValueTask<IActionResult> CreateProjectCalculator(CreateProjectCalculationCommand command)
+        [HttpPost]
+        public async ValueTask<IActionResult> CreateProjectCalculatorAsync([FromForm]CreateProjectCalculationCommand command)
         {
             await _mediator.Send(command);
             return Ok("Created");
